@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample AJAX - Fetch Text</title>
+    <script type="text/javascript">
+        function fetchData() {
+            var request = new XMLHttpRequest(); // Create AJAX request object
+
+            request.onreadystatechange = function () {
+                // Check if request is complete and successful
+                if (this.readyState === 4 && this.status === 200) {
+                    alert(this.responseText); // Popup the result
+                    document.getElementById("output").innerHTML = this.responseText; // Display in div
+                }
+            };
+
+            // Open GET request to test.txt
+            request.open("GET", "test.txt", true);
+            request.send(); // Send request
+        }
+    </script>
+</head>
+<body>
+    <h2>WELCOME TO AJAX</h2>
+    <button onclick="fetchData()">Request Data</button>
+
+    <div id="output" style="margin-top: 20px; font-weight: bold;"></div>
+</body>
+</html>

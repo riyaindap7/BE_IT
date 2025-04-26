@@ -1,0 +1,3 @@
+so Riya ,today we are learning file handling in pyhton.
+last_2nd_line
+last_line

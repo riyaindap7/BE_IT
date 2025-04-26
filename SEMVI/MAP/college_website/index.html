@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Website</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      width: 50px;
+      margin-right: 1rem;
+    }
+
+    .college-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    ul.nav-tabs {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #0066cc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    ul.nav-tabs li {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    ul.nav-tabs li a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    ul.nav-tabs li a:hover,
+    ul.nav-tabs li a:focus {
+      background-color: #004080;
+      outline: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section.announcement {
+      background-color: #fffae6;
+      border-left: 6px solid #ffcc00;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 1rem;
+        width: 100%;
+      }
+
+      ul.nav-tabs {
+        flex-direction: column;
+      }
+
+      ul.nav-tabs li {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo-placeholder.png" alt="College Logo" />
+      <div class="college-name">Your College Name</div>
+    </div>
+    <nav>
+      <ul class="nav-tabs" role="menubar" aria-label="Primary">
+        <li role="none"><a href="#about" role="menuitem" tabindex="0">About Us</a></li>
+        <li role="none"><a href="#academics" role="menuitem" tabindex="-1">Academics</a></li>
+        <li role="none"><a href="#library" role="menuitem" tabindex="-1">Library</a></li>
+        <li role="none"><a href="#placements" role="menuitem" tabindex="-1">Placements</a></li>
+        <li role="none"><a href="#admissions" role="menuitem" tabindex="-1">Admissions</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="announcement" aria-label="Announcements">
+      <strong>Announcement:</strong> Welcome to the new academic year! Stay tuned for upcoming events and updates.
+    </section>
+    <!-- Additional content sections can be added here -->
+  </main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+import socket
+s=socket.socket()
+s.connect(('localhost',8567))
+print(s.recv(1024).decode())
+file=open("to_send_to_server.txt","r")
+content=file.read()
+s.send(bytes(content,'utf-8'))
+file.close()
+print("File sent successfully")
+s.close()

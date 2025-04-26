@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Durva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="libraryApp" ng-controller="LibraryController">
+  <app-root>
+  <h2>LIBRARY DETAILS</h2>
+  <table border="1">
+    <tr>
+      <th>Name of the Book</th>
+      <th>Book Number</th>
+      <th>Book Genre</th>
+      <th>Book Author</th>
+    </tr>
+    <tr ng-repeat="book in books">
+      <td>{{book.name}}</td>
+      <td>{{book.number}}</td>
+      <td>{{book.genre}}</td>
+      <td>{{book.author}}</td>
+    </tr>
+  </table>
+ 
+  <script src="app.js"></script>
+</app-root>
+</body>
+</html>

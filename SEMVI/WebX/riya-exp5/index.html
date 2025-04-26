@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Events & Validations</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+  
+    h2 {
+      color: #333;
+    }
+  
+    form {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+  
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+  
+    span {
+      font-size: 12px;
+      display: block;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      padding: 10px 16px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+  
+    p {
+      margin-top: 20px;
+      font-size: 14px;
+      background: #eef;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+  
+</head>
+<body ng-controller="MainController">
+
+    <h2>User Form</h2>
+    <form name="userForm" novalidate>
+      <label>Name:</label>
+      <input type="text" name="username" ng-model="user.name" required />
+      <span style="color:red" ng-show="userForm.username.$touched && userForm.username.$invalid">
+        Name is required!
+      </span>
+      <br><br>
+    
+      <label>Email:</label>
+      <input type="email" name="useremail" ng-model="user.email" required />
+      <span style="color:red" ng-show="userForm.useremail.$touched && userForm.useremail.$invalid">
+        Enter a valid email!
+      </span>
+      <br><br>
+    
+      <button type="submit" ng-click="submitForm()" ng-disabled="userForm.$invalid">
+        Submit
+      </button>
+    </form>
+    
+    <p style="margin-top:20px">
+      <strong>Entered Name:</strong> {{user.name}} <br>
+      <strong>Entered Email:</strong> {{user.email}}
+    </p>
+    
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('MainController', function($scope) {
+        app.controller('MainController', function($scope) {
+  $scope.user = {
+    name: '',
+    email: ''
+  };
+
+  $scope.submitForm = function() {
+    alert("Form submitted successfully!\nName: " + $scope.user.name + "\nEmail: " + $scope.user.email);
+  };
+});
+
+    });
+  </script>
+</body>
+</html>

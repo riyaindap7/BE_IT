@@ -1,0 +1,3 @@
+this is riya's document
+and she is the client 
+and she is sending the document to server
